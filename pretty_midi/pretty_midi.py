@@ -842,7 +842,7 @@ class PrettyMIDI(object):
 
         # Get piano rolls for each instrument
         pedal_rolls = [
-            i.get_control_change_roll(fs=fs, cc_threshold=cc_threshold, times=times)
+            i.get_control_change_roll(fs=fs, times=times, cc_threshold=cc_threshold)
             for i in self.instruments
         ]
         # Allocate piano roll,
@@ -884,7 +884,7 @@ class PrettyMIDI(object):
 
         # Get piano rolls for each instrument
         piano_rolls = [
-            i.get_piano_roll(fs=fs, times=times, pedal_threshold=pedal_threshold, times=times)
+            i.get_piano_roll(fs=fs, times=times, pedal_threshold=pedal_threshold)
             for i in self.instruments
         ]
         # Allocate piano roll,
